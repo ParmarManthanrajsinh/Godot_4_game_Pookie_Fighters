@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c5mk51k51gcl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doot8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3l0h"]
+bg_color = Color(0.341176, 0.639216, 0.603922, 1)
+skew = Vector2(0.3, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c5ar"]
+bg_color = Color(0.352941, 0.615686, 0.588235, 1)
+skew = Vector2(0.3, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fben6"]
+bg_color = Color(0.168627, 0.341176, 0.329412, 1)
+skew = Vector2(0.3, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 3
+
+[resource]
+Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxEmpty_doot8")
+Button/styles/hover = SubResource("StyleBoxFlat_s3l0h")
+Button/styles/normal = SubResource("StyleBoxFlat_8c5ar")
+Button/styles/pressed = SubResource("StyleBoxFlat_fben6")

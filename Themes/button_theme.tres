@@ -54,7 +54,6 @@ shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4sm3"]
 bg_color = Color(0.352941, 0.615686, 0.588235, 1)
-skew = Vector2(0.3, 0)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -70,5 +69,7 @@ Button/styles/focus = SubResource("StyleBoxEmpty_doot8")
 Button/styles/hover = SubResource("StyleBoxFlat_s3l0h")
 Button/styles/normal = SubResource("StyleBoxFlat_8c5ar")
 Button/styles/pressed = SubResource("StyleBoxFlat_fben6")
+OptionButton/font_sizes/font_size = 20
+TextEdit/font_sizes/font_size = 32
 TextEdit/styles/focus = SubResource("StyleBoxFlat_1i872")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_o4sm3")

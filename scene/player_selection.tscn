@@ -73,7 +73,7 @@ offset_right = 280.0
 offset_bottom = 220.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 185
 script = ExtResource("7_0pd38")
 
 [node name="Player1" type="BoxContainer" parent="HBoxContainer"]
@@ -106,6 +106,21 @@ popup/item_1/text = "Speedster"
 popup/item_1/id = 1
 popup/item_2/text = "Tank"
 popup/item_2/id = 2
+
+[node name="Start_Menu" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Start Game" type="Button" parent="HBoxContainer/Start_Menu"]
+layout_mode = 2
+theme = ExtResource("7_gcd44")
+text = "  Start Game  "
+
+[node name="Back" type="Button" parent="HBoxContainer/Start_Menu"]
+layout_mode = 2
+theme = ExtResource("7_gcd44")
+text = "Back"
 
 [node name="Player2" type="BoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -140,4 +155,5 @@ popup/item_2/text = "Tank"
 popup/item_2/id = 2
 
 [connection signal="item_selected" from="HBoxContainer/Player1/Player1_type" to="HBoxContainer" method="_on_player_1_type_item_selected"]
+[connection signal="pressed" from="HBoxContainer/Start_Menu/Back" to="HBoxContainer" method="_on_back_pressed"]
 [connection signal="item_selected" from="HBoxContainer/Player2/Player2_type" to="HBoxContainer" method="_on_player_2_type_item_selected"]

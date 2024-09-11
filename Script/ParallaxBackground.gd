@@ -7,7 +7,7 @@ func _process(delta) -> void:
 
 
 func _on_play_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scene/player_selection.tscn")
 
 
 func _on_controlls_pressed():
@@ -20,3 +20,4 @@ func _on_about_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+

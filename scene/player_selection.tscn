@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcmp0up0s12kn"]
+[gd_scene load_steps=9 format=3 uid="uid://bcmp0up0s12kn"]
 
 [ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_cbwwl"]
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="2_lki5j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmslvodpinybx" path="res://Asset/parallax background/plx-3.png" id="4_4hcmw"]
 [ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="5_jkh0l"]
 [ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="6_omch5"]
+[ext_resource type="Script" path="res://Script/Player_selection.gd" id="7_0pd38"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="7_gcd44"]
 
 [node name="Player_Selection" type="Control"]
@@ -73,6 +74,7 @@ offset_bottom = 220.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 200
+script = ExtResource("7_0pd38")
 
 [node name="Player1" type="BoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -80,7 +82,7 @@ theme_override_constants/separation = 8
 vertical = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Player1"]
-custom_minimum_size = Vector2(180, 360)
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 
 [node name="Player1_name" type="LineEdit" parent="HBoxContainer/Player1"]
@@ -111,7 +113,7 @@ theme_override_constants/separation = 8
 vertical = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Player2"]
-custom_minimum_size = Vector2(180, 360)
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 
 [node name="Player2_name" type="LineEdit" parent="HBoxContainer/Player2"]
@@ -136,3 +138,6 @@ popup/item_1/text = "Speedster"
 popup/item_1/id = 1
 popup/item_2/text = "Tank"
 popup/item_2/id = 2
+
+[connection signal="item_selected" from="HBoxContainer/Player1/Player1_type" to="HBoxContainer" method="_on_player_1_type_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/Player2/Player2_type" to="HBoxContainer" method="_on_player_2_type_item_selected"]

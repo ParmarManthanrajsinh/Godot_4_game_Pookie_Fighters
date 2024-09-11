@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd0yi81381gha"]
+
+[ext_resource type="Texture2D" uid="uid://cuv60k4hyf8n6" path="res://Asset/character_2/Idle.png" id="1_ki7bo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gxk"]
+atlas = ExtResource("1_ki7bo")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj7yf"]
+atlas = ExtResource("1_ki7bo")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d18kf"]
+atlas = ExtResource("1_ki7bo")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abjx4"]
+atlas = ExtResource("1_ki7bo")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7mn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64gxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj7yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d18kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abjx4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="tank" type="AnimatedSprite2D"]
+position = Vector2(88, 84)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_u7mn5")
+animation = &"Idle"
+frame_progress = 0.592671

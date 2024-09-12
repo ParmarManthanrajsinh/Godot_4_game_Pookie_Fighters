@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var warrier := preload("res://scene/warrier.tscn")
+var warrior := preload("res://scene/warrior.tscn")
 var speedster := preload("res://scene/speedster.tscn")
 var tank := preload("res://scene/tank.tscn")
 
@@ -17,7 +17,7 @@ var type:AnimatedSprite2D
 func _ready() -> void:
 	match Global.Player2_type:
 		0:
-			var warr = warrier.instantiate()
+			var warr = warrior.instantiate()
 			add_child(warr)
 			warr.play()
 			warr.flip_h = true

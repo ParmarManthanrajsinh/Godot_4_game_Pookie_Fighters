@@ -1,15 +1,15 @@
 extends HBoxContainer
 
-var warrier := preload("res://scene/warrier.tscn")
+var warrior := preload("res://scene/warrior.tscn")
 var speedster := preload("res://scene/speedster.tscn")
 var tank := preload("res://scene/tank.tscn")
 
 func _ready() -> void:
 	# Initialize starting selected character
-	var warr1 = warrier.instantiate()
+	var warr1 = warrior.instantiate()
 	get_node("Player1/Panel").add_child(warr1)
 	warr1.play("Idle")
-	var warr2 = warrier.instantiate()
+	var warr2 = warrior.instantiate()
 	get_node("Player2/Panel").add_child(warr2)
 	warr2.play("Idle")
 
@@ -25,7 +25,7 @@ func _on_player_1_type_item_selected(index) -> void:
 	# Adding the selected character
 	match index:
 		0:
-			var warr = warrier.instantiate()
+			var warr = warrior.instantiate()
 			get_node("Player1/Panel").add_child(warr)
 			warr.play("Idle")
 		1:
@@ -50,7 +50,7 @@ func _on_player_2_type_item_selected(index) -> void:
 	# Adding the selected character
 	match index:
 		0:
-			var warr = warrier.instantiate()
+			var warr = warrior.instantiate()
 			get_node("Player2/Panel").add_child(warr)
 			warr.play("Idle")
 		1:

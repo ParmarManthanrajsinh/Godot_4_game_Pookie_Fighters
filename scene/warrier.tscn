@@ -1,6 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://btu17ywuq44jy"]
+[gd_scene load_steps=23 format=3 uid="uid://btu17ywuq44jy"]
 
+[ext_resource type="Texture2D" uid="uid://c1538yfu4s2g7" path="res://Asset/character_1/Jump.png" id="1_dk6q3"]
 [ext_resource type="Texture2D" uid="uid://7no02yoc1l2r" path="res://Asset/character_1/Idle.png" id="1_ld062"]
+[ext_resource type="Texture2D" uid="uid://dxxgmm1ittlt0" path="res://Asset/character_1/Walk.png" id="3_pt3b5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aewt"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch45j"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxa8i"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(252, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72yw8"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(294, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1pef"]
 atlas = ExtResource("1_ld062")
@@ -18,8 +36,65 @@ region = Rect2(84, 0, 42, 42)
 atlas = ExtResource("1_ld062")
 region = Rect2(126, 0, 42, 42)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqkj5"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqxte"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24fcd"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0hqd"]
+atlas = ExtResource("1_dk6q3")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spxjo"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6so5b"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhyi3"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83yak"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5xcj"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg7gm"]
+atlas = ExtResource("3_pt3b5")
+region = Rect2(210, 0, 42, 42)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7mn5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aewt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch45j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxa8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72yw8")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i1pef")
@@ -36,12 +111,52 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqkj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqxte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24fcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0hqd")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spxjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6so5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhyi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83yak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5xcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg7gm")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
 }]
 
 [node name="Warrier" type="AnimatedSprite2D"]
 position = Vector2(88, 84)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_u7mn5")
-animation = &"Idle"
-frame = 2
-frame_progress = 0.0307859
+animation = &"Jump"
+frame = 3
+frame_progress = 1.0

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+const ACCELERATION = 250.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -47,12 +48,25 @@ func _physics_process(delta) -> void:
 	if direction == 1:
 		type.flip_h = false
 		type.offset.x = 0
-		velocity.x = direction * SPEED
+		velocity.x = direction * ACCELERATION
 	elif direction == -1:
 		type.flip_h = true
 		type.offset.x = -12
-		velocity.x = direction * SPEED
+		velocity.x = direction * ACCELERATION
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		velocity.x = lerp(velocity.x,0.0,0.1)
+	
+	# Play the correct animation based on the state.
+	if is_on_floor():
+		if int(abs(velocity.x)) > 0:  # Only play "Walk" if moving horizontally.
+			type.play("Walk")
+		else:
+			type.play("Idle")
+	else:
+		if velocity.y < 0:  # Jumping upward.
+			type.play("Jump")
+		else:  # Falling downward.
+			type.play("Fall")
+	
+	velocity.x = clamp(velocity.x,-SPEED,SPEED)
 	move_and_slide()

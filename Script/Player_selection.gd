@@ -8,10 +8,10 @@ func _ready() -> void:
 	# Initialize starting selected character
 	var warr1 = warrier.instantiate()
 	get_node("Player1/Panel").add_child(warr1)
-	warr1.play()
+	warr1.play("Idle")
 	var warr2 = warrier.instantiate()
 	get_node("Player2/Panel").add_child(warr2)
-	warr2.play()
+	warr2.play("Idle")
 
 func _on_player_1_type_item_selected(index) -> void:
 	# Setting the player1_type for character properties in the player1 scene
@@ -27,15 +27,15 @@ func _on_player_1_type_item_selected(index) -> void:
 		0:
 			var warr = warrier.instantiate()
 			get_node("Player1/Panel").add_child(warr)
-			warr.play()
+			warr.play("Idle")
 		1:
 			var spee = speedster.instantiate()
 			get_node("Player1/Panel").add_child(spee)
-			spee.play()
+			spee.play("Idle")
 		2:
 			var ta = tank.instantiate()
 			get_node("Player1/Panel").add_child(ta)
-			ta.play()
+			ta.play("Idle")
 
 
 func _on_player_2_type_item_selected(index) -> void:
@@ -52,15 +52,15 @@ func _on_player_2_type_item_selected(index) -> void:
 		0:
 			var warr = warrier.instantiate()
 			get_node("Player2/Panel").add_child(warr)
-			warr.play()
+			warr.play("Idle")
 		1:
 			var spee = speedster.instantiate()
 			get_node("Player2/Panel").add_child(spee)
-			spee.play()
+			spee.play("Idle")
 		2:
 			var ta = tank.instantiate()
 			get_node("Player2/Panel").add_child(ta)
-			ta.play()
+			ta.play("Idle")
 
 func _on_back_pressed() -> void:
 	# Send back to the main scene

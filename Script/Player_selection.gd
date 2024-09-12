@@ -14,6 +14,8 @@ func _ready() -> void:
 	warr2.play()
 
 func _on_player_1_type_item_selected(index) -> void:
+	# Setting the player1_type for character properties in the player1 scene
+	Global.Player1_type = index
 	
 	# Removing the previously selected character
 	for n in get_node("Player1/Panel").get_children():
@@ -37,6 +39,8 @@ func _on_player_1_type_item_selected(index) -> void:
 
 
 func _on_player_2_type_item_selected(index) -> void:
+	# Setting the player2_type for character properties in the player2 scene
+	Global.Player2_type = index
 	
 	# Removing the previously selected character
 	for n in get_node("Player2/Panel").get_children():
@@ -61,3 +65,8 @@ func _on_player_2_type_item_selected(index) -> void:
 func _on_back_pressed() -> void:
 	# Send back to the main scene
 	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+
+
+func _on_start_game_pressed():
+	# Play the Selected Map
+	get_tree().change_scene_to_file("res://scene/map1.tscn")

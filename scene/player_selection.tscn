@@ -155,5 +155,6 @@ popup/item_2/text = "Tank"
 popup/item_2/id = 2
 
 [connection signal="item_selected" from="HBoxContainer/Player1/Player1_type" to="HBoxContainer" method="_on_player_1_type_item_selected"]
+[connection signal="pressed" from="HBoxContainer/Start_Menu/Start Game" to="HBoxContainer" method="_on_start_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/Start_Menu/Back" to="HBoxContainer" method="_on_back_pressed"]
 [connection signal="item_selected" from="HBoxContainer/Player2/Player2_type" to="HBoxContainer" method="_on_player_2_type_item_selected"]

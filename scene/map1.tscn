@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://x4b6d3bcsv7y"]
+[gd_scene load_steps=12 format=3 uid="uid://x4b6d3bcsv7y"]
 
 [ext_resource type="Texture2D" uid="uid://b1hkbto5vy0gu" path="res://Asset/jungle tileset/jungle tileset.png" id="1_uoshb"]
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="3_hqsn2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://djssm768ywia6" path="res://scene/player_1.tscn" id="7_rwqcc"]
 [ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="7_usi4i"]
 [ext_resource type="PackedScene" uid="uid://dhvyfiqehmd1v" path="res://scene/player_2.tscn" id="8_cpda8"]
+[ext_resource type="PackedScene" uid="uid://uh8eyfswa2wk" path="res://scene/player_properties.tscn" id="9_5kv38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("1_uoshb")
@@ -1138,3 +1139,14 @@ position = Vector2(128, 300)
 
 [node name="Player2" parent="." instance=ExtResource("8_cpda8")]
 position = Vector2(1024, 300)
+
+[node name="Player_Properties" parent="." instance=ExtResource("9_5kv38")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 640.0
+offset_right = 640.0
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4

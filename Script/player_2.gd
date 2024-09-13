@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const ACCELERATION = 250.0
+var SPEED = 300.0
+var ACCELERATION = 250.0
 const JUMP_VELOCITY = -400.0
+var health:int = 10
+var attack:int = 3
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -30,6 +32,12 @@ func _ready() -> void:
 			spee.flip_h = true
 			spee.offset.x = -12
 			type = spee
+			
+			# Setting the player property
+			health = 8
+			attack = 2
+			SPEED = 400
+			ACCELERATION = 350
 		2:
 			var ta = tank.instantiate()
 			add_child(ta)
@@ -37,6 +45,12 @@ func _ready() -> void:
 			ta.flip_h = true
 			ta.offset.x = -12
 			type = ta
+			
+			# Setting the player property
+			health = 14
+			attack = 2
+			SPEED = 280
+	Global.Player2_health = health
 
 func _physics_process(delta) -> void:
 	# Add the gravity.

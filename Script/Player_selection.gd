@@ -70,3 +70,10 @@ func _on_back_pressed() -> void:
 func _on_start_game_pressed():
 	# Play the Selected Map
 	get_tree().change_scene_to_file("res://scene/map1.tscn")
+	
+	if $Player1/Player1_name.text != "" and $Player2/Player2_name.text != "":
+		Global.Player1_name = $Player1/Player1_name.text
+		Global.Player2_name = $Player2/Player2_name.text
+	else:
+		Global.Player1_name = "player1"
+		Global.Player2_name = "player2"

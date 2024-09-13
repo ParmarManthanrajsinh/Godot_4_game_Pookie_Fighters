@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c5mk51k51gcl3"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c5mk51k51gcl3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doot8"]
 
@@ -39,6 +39,24 @@ expand_margin_top = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlbyn"]
+bg_color = Color(0.352941, 0.615686, 0.588235, 1)
+skew = Vector2(0.3, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx1ps"]
+bg_color = Color(0.6, 0.6, 0.6, 0.266667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liwjx"]
+bg_color = Color(0, 0.717647, 0.4, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i872"]
 bg_color = Color(0.341176, 0.639216, 0.603922, 1)
 skew = Vector2(0.3, 0)
@@ -69,7 +87,13 @@ Button/styles/focus = SubResource("StyleBoxEmpty_doot8")
 Button/styles/hover = SubResource("StyleBoxFlat_s3l0h")
 Button/styles/normal = SubResource("StyleBoxFlat_8c5ar")
 Button/styles/pressed = SubResource("StyleBoxFlat_fben6")
+Label/font_sizes/font_size = 20
+Label/styles/normal = SubResource("StyleBoxFlat_hlbyn")
 OptionButton/font_sizes/font_size = 20
+ProgressBar/colors/font_color = Color(0.94902, 0.94902, 0.94902, 0)
+ProgressBar/font_sizes/font_size = 11
+ProgressBar/styles/background = SubResource("StyleBoxFlat_wx1ps")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_liwjx")
 TextEdit/font_sizes/font_size = 32
 TextEdit/styles/focus = SubResource("StyleBoxFlat_1i872")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_o4sm3")

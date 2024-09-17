@@ -79,6 +79,7 @@ script = ExtResource("7_0pd38")
 [node name="Player1" type="BoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 1
 vertical = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Player1"]
@@ -117,6 +118,25 @@ layout_mode = 2
 theme = ExtResource("7_gcd44")
 text = "  Start Game  "
 
+[node name="Level_Selection" type="OptionButton" parent="HBoxContainer/Start_Menu"]
+layout_mode = 2
+theme = ExtResource("7_gcd44")
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "Map1"
+popup/item_0/id = 0
+popup/item_1/text = "Map2"
+popup/item_1/id = 1
+popup/item_2/text = "Map3"
+popup/item_2/id = 2
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Start_Menu"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
 [node name="Back" type="Button" parent="HBoxContainer/Start_Menu"]
 layout_mode = 2
 theme = ExtResource("7_gcd44")
@@ -125,6 +145,7 @@ text = "Back"
 [node name="Player2" type="BoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 1
 vertical = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Player2"]
@@ -156,5 +177,6 @@ popup/item_2/id = 2
 
 [connection signal="item_selected" from="HBoxContainer/Player1/Player1_type" to="HBoxContainer" method="_on_player_1_type_item_selected"]
 [connection signal="pressed" from="HBoxContainer/Start_Menu/Start Game" to="HBoxContainer" method="_on_start_game_pressed"]
+[connection signal="item_selected" from="HBoxContainer/Start_Menu/Level_Selection" to="HBoxContainer" method="_on_level_selection_item_selected"]
 [connection signal="pressed" from="HBoxContainer/Start_Menu/Back" to="HBoxContainer" method="_on_back_pressed"]
 [connection signal="item_selected" from="HBoxContainer/Player2/Player2_type" to="HBoxContainer" method="_on_player_2_type_item_selected"]

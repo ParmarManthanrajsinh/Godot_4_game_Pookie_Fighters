@@ -3,8 +3,11 @@ extends HBoxContainer
 var warrior := preload("res://scene/warrior.tscn")
 var speedster := preload("res://scene/speedster.tscn")
 var tank := preload("res://scene/tank.tscn")
+var map:int = 0
 
 func _ready() -> void:
+	Global.Player1_type = 0
+	Global.Player2_type = 0
 	# Initialize starting selected character
 	var warr1 = warrior.instantiate()
 	get_node("Player1/Panel").add_child(warr1)
@@ -69,7 +72,13 @@ func _on_back_pressed() -> void:
 
 func _on_start_game_pressed():
 	# Play the Selected Map
-	get_tree().change_scene_to_file("res://scene/map1.tscn")
+	match map:
+		0:
+			get_tree().change_scene_to_file("res://scene/map1.tscn")
+		1:
+			get_tree().change_scene_to_file("res://scene/map2.tscn")
+		2:
+			get_tree().change_scene_to_file("res://scene/map3.tscn")
 	
 	if $Player1/Player1_name.text != "" and $Player2/Player2_name.text != "":
 		Global.Player1_name = $Player1/Player1_name.text
@@ -77,3 +86,13 @@ func _on_start_game_pressed():
 	else:
 		Global.Player1_name = "player1"
 		Global.Player2_name = "player2"
+
+
+func _on_level_selection_item_selected(index):
+	match index:
+		0:
+			map = 0
+		1:
+			map = 1
+		2:
+			map = 2

@@ -112,13 +112,41 @@ func Attack() -> void:
 
 		IsAttacking = true
 		attack_timer = attack_cooldown # Reset the cooldown
-		if i == 0:
-			type.play("Attack1")
+		
+		if is_on_floor():
+			$AnimationPlayer.speed_scale = 1
+			$AnimationPlayer.play("Attack")
+			if int(abs(velocity.x)) > 0: # Only play "Walk" if moving horizontally.
+				if i == 0:
+					type.play("Walk_Attack1")
+				else:
+					type.play("Walk_Attack2")
+			else:
+				if i == 0:
+					type.play("Attack1")
+				else:
+					type.play("Attack2")
 		else:
-			type.play("Attack2")
-		$AnimationPlayer.play("Attack")
+			type.play("Fall_Attack")
+			$AnimationPlayer.speed_scale = 2
+			$AnimationPlayer.play("Attack")
 
 
 func _on_animation_finished() -> void:
-	if type.animation == "Attack1" or type.animation == "Attack2":
+	if type.animation in ["Walk_Attack1","Walk_Attack2","Attack1","Attack2","Jump_Attack","Fall_Attack"]:
 		IsAttacking = false
+
+func _on_attack_box_body_entered(body):
+	if IsAttacking == true and body.name == "Player1":
+		if type.flip_h == true:
+			body.takedamage(attack,-1)
+		else:
+			body.takedamage(attack,1)
+
+func takedamage(damage:int, d:int) -> void:
+	health -= damage
+	print(health)
+	velocity.x = d*2000*damage
+	Global.Player2_health = health
+
+

@@ -548,6 +548,4 @@ animations = [{
 position = Vector2(88, 84)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_u7mn5")
-animation = &"Death"
-frame = 7
-frame_progress = 1.0
+animation = &"Fall_Attack"

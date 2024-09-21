@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://gaw22fq8r0e4"]
+
+[sub_resource type="Curve" id="Curve_v7yig"]
+_data = [Vector2(0.010989, 0.690909), 0.0, 2.67879, 0, 0, Vector2(0.510989, 0.872727), -0.588283, -0.588283, 0, 0, Vector2(0.917582, 0.154545), -3.5297, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_52nt5"]
+colors = PackedColorArray(0.412152, 0.412152, 0.412152, 1, 1, 1, 1, 1)
+
+[node name="Blood_partical" type="CPUParticles2D"]
+scale = Vector2(28, 28)
+emitting = false
+amount = 80
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 1.0
+initial_velocity_max = 8.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_v7yig")
+color = Color(0.576471, 0, 0, 1)
+color_initial_ramp = SubResource("Gradient_52nt5")

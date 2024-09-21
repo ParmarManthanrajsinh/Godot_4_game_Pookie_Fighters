@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://djssm768ywia6"]
+[gd_scene load_steps=9 format=3 uid="uid://djssm768ywia6"]
 
 [ext_resource type="Script" path="res://Script/player_1.gd" id="1_8mbep"]
+[ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_ed0fd"]
+[ext_resource type="PackedScene" uid="uid://gaw22fq8r0e4" path="res://scene/blood_partical.tscn" id="3_j38f4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p20tx"]
 radius = 40.0
@@ -49,6 +51,13 @@ _data = {
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_8mbep")
 
+[node name="Blood_partical" parent="." instance=ExtResource("3_j38f4")]
+z_index = 1
+position = Vector2(64, 112)
+
+[node name="Jump_partical" parent="." instance=ExtResource("2_ed0fd")]
+position = Vector2(64, 152)
+
 [node name="HitBox" type="CollisionShape2D" parent="."]
 light_mask = 3
 position = Vector2(64, 112)
@@ -64,5 +73,9 @@ shape = SubResource("RectangleShape2D_70x0a")
 libraries = {
 "": SubResource("AnimationLibrary_mrd4d")
 }
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]

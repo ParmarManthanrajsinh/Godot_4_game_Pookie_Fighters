@@ -8,8 +8,8 @@ var health: int = 10
 
 var attack: int = 3
 var IsAttacking: bool = false
-var attack_cooldown: float = 0.5
-var attack_timer: float = 0.0
+var TakenDamage: bool = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -18,6 +18,7 @@ var speedster := preload("res://scene/speedster.tscn")
 var tank := preload("res://scene/tank.tscn")
 
 var type: AnimatedSprite2D
+@onready var AttackCooldown := $AttackCooldown
 
 func _ready() -> void:
 	match Global.Player2_type:
@@ -58,10 +59,12 @@ func _ready() -> void:
 	$AttackBox/CollisionShape.disabled = true
 
 func _physics_process(delta) -> void:
-	
-	# Update attack cooldown timer
-	if attack_timer > 0:
-		attack_timer -= delta
+
+	# When the Player dies
+	if health <= 0:
+		$HitBox.disabled = true
+		type.play("Death")
+		return
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -70,8 +73,9 @@ func _physics_process(delta) -> void:
 	# Handle Jump.
 	if Input.is_action_just_pressed("P2_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$Jump_partical.emitting = true
 	# Handle Attack
-	if Input.is_action_just_pressed("P2_Attack") and attack_timer <= 0:
+	if Input.is_action_just_pressed("P2_Attack") and AttackCooldown.is_stopped() and TakenDamage == false:
 		Attack()
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("P2_move_right", "P2_move_left")
@@ -91,7 +95,9 @@ func _physics_process(delta) -> void:
 		velocity.x = lerp(velocity.x, 0.0, 0.1)
 	
 	# Play the correct animation based on the state.
-	if is_on_floor() and IsAttacking == false:
+	if TakenDamage:
+		type.play("Hurt")
+	elif is_on_floor() and IsAttacking == false:
 		if int(abs(velocity.x)) > 0: # Only play "Walk" if moving horizontally.
 			type.play("Walk")
 		else:
@@ -111,7 +117,7 @@ func Attack() -> void:
 		var i: int = randi_range(0, 1)
 
 		IsAttacking = true
-		attack_timer = attack_cooldown # Reset the cooldown
+		AttackCooldown.start()
 		
 		if is_on_floor():
 			$AnimationPlayer.speed_scale = 1
@@ -135,6 +141,11 @@ func Attack() -> void:
 func _on_animation_finished() -> void:
 	if type.animation in ["Walk_Attack1","Walk_Attack2","Attack1","Attack2","Jump_Attack","Fall_Attack"]:
 		IsAttacking = false
+	elif type.animation == "Hurt":
+		TakenDamage = false
+		IsAttacking = false
+	elif type.animation == "Death":
+		self.queue_free()
 
 func _on_attack_box_body_entered(body):
 	if IsAttacking == true and body.name == "Player1":
@@ -145,6 +156,8 @@ func _on_attack_box_body_entered(body):
 
 func takedamage(damage:int, d:int) -> void:
 	health -= damage
+	$Blood_partical.emitting = true
+	TakenDamage = true
 	print(health)
 	velocity.x = d*2000*damage
 	Global.Player2_health = health

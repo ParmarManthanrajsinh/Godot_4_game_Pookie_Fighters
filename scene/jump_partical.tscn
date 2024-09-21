@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6fx83fng06k"]
+
+[sub_resource type="Curve" id="Curve_uajpa"]
+_data = [Vector2(0, 0.636364), 0.0, 1.96757, 0, 0, Vector2(0.615385, 0.881818), -1.24091, -1.24091, 0, 0, Vector2(1, 0.0363636), -4.13636, 0.0, 0, 0]
+point_count = 3
+
+[node name="Jump_partical" type="CPUParticles2D"]
+scale = Vector2(7, 7)
+emitting = false
+amount = 40
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 700)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_min = 7.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_uajpa")

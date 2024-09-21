@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7exftm1the11"]
+[gd_scene load_steps=13 format=3 uid="uid://b7exftm1the11"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_nkaby"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_6dqnc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://djssm768ywia6" path="res://scene/player_1.tscn" id="7_k52qk"]
 [ext_resource type="PackedScene" uid="uid://dhvyfiqehmd1v" path="res://scene/player_2.tscn" id="8_w5ipq"]
 [ext_resource type="PackedScene" uid="uid://uh8eyfswa2wk" path="res://scene/player_properties.tscn" id="9_tj1hb"]
+[ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="10_4jidc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("6_fd4mx")
@@ -1211,3 +1212,13 @@ offset_right = 640.0
 grow_vertical = 1
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("10_4jidc")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+metadata/_edit_group_ = true

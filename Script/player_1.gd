@@ -51,6 +51,7 @@ func _ready() -> void:
 	Global.Player1_health = health
 	type.animation_finished.connect(_on_animation_finished)
 	$AttackBox/CollisionShape.disabled = true
+	$CenterContainer/playername.text = Global.Player1_name
 
 func _physics_process(delta) -> void:
 

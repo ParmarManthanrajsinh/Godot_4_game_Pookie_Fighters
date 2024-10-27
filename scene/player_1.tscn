@@ -89,5 +89,14 @@ position = Vector2(64, 64)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ewykn")
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 24.0
+offset_right = 136.0
+offset_bottom = 50.0
+
+[node name="playername" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "player1"
+
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_entered" from="head" to="." method="_on_head_body_entered"]

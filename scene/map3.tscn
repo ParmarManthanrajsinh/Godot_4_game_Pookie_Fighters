@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dylcum61jhr07"]
+[gd_scene load_steps=21 format=3 uid="uid://dylcum61jhr07"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_n74lg"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_wjl01"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://uh8eyfswa2wk" path="res://scene/player_properties.tscn" id="9_yef68"]
 [ext_resource type="Script" path="res://Script/KillZArea.gd" id="11_4irf3"]
 [ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="11_48m41"]
+[ext_resource type="PackedScene" uid="uid://b1lypvorpy47c" path="res://scene/Win_scene.tscn" id="12_ldm7d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("6_56t61")
@@ -1288,6 +1289,8 @@ position = Vector2(632, 824)
 shape = SubResource("RectangleShape2D_0j62c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Win_scene" parent="CanvasLayer" instance=ExtResource("12_ldm7d")]
 
 [node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("11_48m41")]
 anchors_preset = 8

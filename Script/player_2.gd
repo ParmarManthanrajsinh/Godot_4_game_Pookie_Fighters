@@ -162,4 +162,6 @@ func takedamage(damage:int, d:int) -> void:
 	velocity.x = d*2000*damage
 	Global.Player2_health = health
 
-
+func _on_head_body_entered(body):
+	if body.name == "Player1":
+		body.velocity.y = -500

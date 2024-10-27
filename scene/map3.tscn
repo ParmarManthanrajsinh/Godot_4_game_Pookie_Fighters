@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dylcum61jhr07"]
+[gd_scene load_steps=20 format=3 uid="uid://dylcum61jhr07"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_n74lg"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_wjl01"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://djssm768ywia6" path="res://scene/player_1.tscn" id="7_h5sht"]
 [ext_resource type="PackedScene" uid="uid://dhvyfiqehmd1v" path="res://scene/player_2.tscn" id="8_w3mtu"]
 [ext_resource type="PackedScene" uid="uid://uh8eyfswa2wk" path="res://scene/player_properties.tscn" id="9_yef68"]
+[ext_resource type="Script" path="res://Script/KillZArea.gd" id="11_4irf3"]
 [ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="11_48m41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
@@ -1279,9 +1280,10 @@ libraries = {
 }
 script = ExtResource("7_d7trb")
 
-[node name="KillZ" type="StaticBody2D" parent="."]
+[node name="KillZArea" type="Area2D" parent="."]
+script = ExtResource("11_4irf3")
 
-[node name="collision_shape" type="CollisionShape2D" parent="KillZ"]
+[node name="collision_shape" type="CollisionShape2D" parent="KillZArea"]
 position = Vector2(632, 824)
 shape = SubResource("RectangleShape2D_0j62c")
 
@@ -1294,3 +1296,5 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 metadata/_edit_group_ = true
+
+[connection signal="body_entered" from="KillZArea" to="KillZArea" method="_on_body_entered"]

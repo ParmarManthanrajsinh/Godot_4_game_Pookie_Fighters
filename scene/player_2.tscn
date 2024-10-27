@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhvyfiqehmd1v"]
+[gd_scene load_steps=13 format=3 uid="uid://dhvyfiqehmd1v"]
 
 [ext_resource type="Script" path="res://Script/player_2.gd" id="1_i3bn3"]
 [ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_6tw8k"]
 [ext_resource type="PackedScene" uid="uid://gaw22fq8r0e4" path="res://scene/blood_partical.tscn" id="3_nq6qb"]
+[ext_resource type="AudioStream" uid="uid://bfqmun46ynl8w" path="res://Asset/SFX/jump.wav" id="4_p0q46"]
+[ext_resource type="AudioStream" uid="uid://cikoxk0v5c8g4" path="res://Asset/SFX/hit.wav" id="4_yt7cs"]
+[ext_resource type="AudioStream" uid="uid://dog8u628r2w2d" path="res://Asset/SFX/Hurt.wav" id="5_32liy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p20tx"]
 radius = 40.0
@@ -96,6 +99,15 @@ offset_bottom = 50.0
 [node name="playername" type="Label" parent="CenterContainer"]
 layout_mode = 2
 text = "player1"
+
+[node name="hit_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yt7cs")
+
+[node name="hurt_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_32liy")
+
+[node name="jump_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p0q46")
 
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_entered" from="head" to="." method="_on_head_body_entered"]

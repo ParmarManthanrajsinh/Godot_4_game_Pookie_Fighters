@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctc3ep724ir5f"]
+[gd_scene load_steps=9 format=3 uid="uid://ctc3ep724ir5f"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_kgjoi"]
 [ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_pousr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="4_x0ra4"]
 [ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="5_rcq4l"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="7_gw4ph"]
+[ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="8_ewuqk"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -99,6 +100,11 @@ layout_mode = 2
 theme = ExtResource("7_gw4ph")
 text = "Exit
 "
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ewuqk")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="ParallaxBackground" method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controlls" to="ParallaxBackground" method="_on_controlls_pressed"]

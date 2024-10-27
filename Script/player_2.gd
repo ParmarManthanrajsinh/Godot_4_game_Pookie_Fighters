@@ -75,6 +75,7 @@ func _physics_process(delta) -> void:
 	if Input.is_action_just_pressed("P2_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$Jump_partical.emitting = true
+		$jump_sound.play()
 	# Handle Attack
 	if Input.is_action_just_pressed("P2_Attack") and AttackCooldown.is_stopped() and TakenDamage == false:
 		Attack()
@@ -119,6 +120,7 @@ func Attack() -> void:
 
 		IsAttacking = true
 		AttackCooldown.start()
+		$hit_sound.play()
 		
 		if is_on_floor():
 			$AnimationPlayer.speed_scale = 1
@@ -150,6 +152,7 @@ func _on_animation_finished() -> void:
 
 func _on_attack_box_body_entered(body):
 	if IsAttacking == true and body.name == "Player1":
+		$hurt_sound.play()
 		if type.flip_h == true:
 			body.takedamage(attack,-1)
 		else:

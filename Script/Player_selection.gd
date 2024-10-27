@@ -79,6 +79,8 @@ func _on_start_game_pressed():
 			get_tree().change_scene_to_file("res://scene/map2.tscn")
 		2:
 			get_tree().change_scene_to_file("res://scene/map3.tscn")
+		3:
+			get_tree().change_scene_to_file("res://scene/map4.tscn")
 	
 	if $Player1/Player1_name.text != "" and $Player2/Player2_name.text != "":
 		Global.Player1_name = $Player1/Player1_name.text
@@ -96,3 +98,5 @@ func _on_level_selection_item_selected(index):
 			map = 1
 		2:
 			map = 2
+		3:
+			map = 3

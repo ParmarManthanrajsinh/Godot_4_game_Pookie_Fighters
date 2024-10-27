@@ -122,7 +122,7 @@ text = "  Start Game  "
 layout_mode = 2
 theme = ExtResource("7_gcd44")
 alignment = 1
-item_count = 3
+item_count = 4
 selected = 0
 popup/item_0/text = "Map1"
 popup/item_0/id = 0
@@ -130,6 +130,8 @@ popup/item_1/text = "Map2"
 popup/item_1/id = 1
 popup/item_2/text = "Map3"
 popup/item_2/id = 2
+popup/item_3/text = "Map4"
+popup/item_3/id = 3
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/Start_Menu"]
 modulate = Color(1, 1, 1, 0)

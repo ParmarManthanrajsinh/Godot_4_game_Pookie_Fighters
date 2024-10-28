@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl1brpklt3c46"]
+[gd_scene load_steps=17 format=3 uid="uid://dl1brpklt3c46"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_jnou5"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_jlrrd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="10_5pmf2"]
 [ext_resource type="PackedScene" uid="uid://b1lypvorpy47c" path="res://scene/Win_scene.tscn" id="11_85u0m"]
 [ext_resource type="Script" path="res://Script/KillZArea.gd" id="12_71r2v"]
+[ext_resource type="PackedScene" uid="uid://bomgys4hmiy8h" path="res://scene/foodgenrater.tscn" id="13_m6jy8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("6_l1m0o")
@@ -1133,7 +1134,8 @@ texture = ExtResource("6_l1m0o")
 38:20/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_pm4w1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/2 = SubResource("TileSetAtlasSource_d7xaw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sxa0"]
@@ -1210,5 +1212,7 @@ script = ExtResource("12_71r2v")
 [node name="collision_shape" type="CollisionShape2D" parent="KillZArea"]
 position = Vector2(645.5, 808)
 shape = SubResource("RectangleShape2D_8sxa0")
+
+[node name="Foodgenrater" parent="." instance=ExtResource("13_m6jy8")]
 
 [connection signal="body_entered" from="KillZArea" to="KillZArea" method="_on_body_entered"]

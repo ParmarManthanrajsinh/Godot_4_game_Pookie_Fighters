@@ -8,3 +8,5 @@ var Player2_name:StringName
 
 var Player1_health:int = 10
 var Player2_health:int = 10
+
+var GenrateFood:bool = true

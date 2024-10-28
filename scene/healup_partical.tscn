@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://o005fm03kws2"]
+
+[sub_resource type="Curve" id="Curve_soym1"]
+_data = [Vector2(0.0769231, 0.581818), 0.0, 1.01111, 0, 0, Vector2(0.659341, 0.345455), -1.73727, -1.73727, 0, 0, Vector2(0.994506, 0.0454545), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_inuut"]
+offsets = PackedFloat32Array(0, 0.450331, 1)
+colors = PackedColorArray(0, 1, 0, 1, 5.05373e-07, 0.316442, 0.0092128, 1, 1, 1, 1, 1)
+
+[node name="healup_partical" type="CPUParticles2D"]
+scale = Vector2(15, 15)
+emitting = false
+amount = 48
+lifetime = 0.6
+one_shot = true
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2(0, -980)
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_soym1")
+color_ramp = SubResource("Gradient_inuut")

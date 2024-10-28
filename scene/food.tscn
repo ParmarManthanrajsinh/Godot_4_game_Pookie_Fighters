@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4cul5t1hd87q"]
+
+[ext_resource type="Texture2D" uid="uid://befv0at4j0mo0" path="res://Asset/food/Food.png" id="1_08wij"]
+[ext_resource type="Script" path="res://Script/food.gd" id="1_p36yr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5bn4t"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyqkc"]
+radius = 48.0
+
+[node name="Food" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+lock_rotation = true
+script = ExtResource("1_p36yr")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5bn4t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_08wij")
+hframes = 8
+vframes = 8
+
+[node name="PickUpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+shape = SubResource("CircleShape2D_tyqkc")
+
+[connection signal="body_entered" from="PickUpArea" to="." method="_on_pick_up_area_body_entered"]

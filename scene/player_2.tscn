@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhvyfiqehmd1v"]
+[gd_scene load_steps=15 format=3 uid="uid://dhvyfiqehmd1v"]
 
 [ext_resource type="Script" path="res://Script/player_2.gd" id="1_i3bn3"]
 [ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_6tw8k"]
+[ext_resource type="PackedScene" uid="uid://o005fm03kws2" path="res://scene/healup_partical.tscn" id="2_wtuiw"]
 [ext_resource type="PackedScene" uid="uid://gaw22fq8r0e4" path="res://scene/blood_partical.tscn" id="3_nq6qb"]
 [ext_resource type="AudioStream" uid="uid://bfqmun46ynl8w" path="res://Asset/SFX/jump.wav" id="4_p0q46"]
 [ext_resource type="AudioStream" uid="uid://cikoxk0v5c8g4" path="res://Asset/SFX/hit.wav" id="4_yt7cs"]
 [ext_resource type="AudioStream" uid="uid://dog8u628r2w2d" path="res://Asset/SFX/Hurt.wav" id="5_32liy"]
+[ext_resource type="AudioStream" uid="uid://cqyn5ilybkjoi" path="res://Asset/SFX/healup.wav" id="8_rs468"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p20tx"]
 radius = 40.0
@@ -58,6 +60,10 @@ height = 64.0
 [node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_i3bn3")
 
+[node name="healup_partical" parent="." instance=ExtResource("2_wtuiw")]
+z_index = 1
+position = Vector2(64, 112)
+
 [node name="Blood_partical" parent="." instance=ExtResource("3_nq6qb")]
 z_index = 1
 position = Vector2(64, 112)
@@ -66,6 +72,7 @@ position = Vector2(64, 112)
 position = Vector2(64, 152)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
+light_mask = 3
 position = Vector2(64, 112)
 shape = SubResource("CapsuleShape2D_p20tx")
 
@@ -108,6 +115,9 @@ stream = ExtResource("5_32liy")
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p0q46")
+
+[node name="healup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_rs468")
 
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_entered" from="head" to="." method="_on_head_body_entered"]

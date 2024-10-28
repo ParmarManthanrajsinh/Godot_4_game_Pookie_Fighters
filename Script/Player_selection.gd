@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _on_player_1_type_item_selected(index) -> void:
 	# Setting the player1_type for character properties in the player1 scene
+	$"../click_sound".play()
 	Global.Player1_type = index
 	
 	# Removing the previously selected character
@@ -43,6 +44,7 @@ func _on_player_1_type_item_selected(index) -> void:
 
 func _on_player_2_type_item_selected(index) -> void:
 	# Setting the player2_type for character properties in the player2 scene
+	$"../click_sound".play()
 	Global.Player2_type = index
 	
 	# Removing the previously selected character
@@ -67,10 +69,12 @@ func _on_player_2_type_item_selected(index) -> void:
 
 func _on_back_pressed() -> void:
 	# Send back to the main scene
+	$"../click_sound".play()
 	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
 
 func _on_start_game_pressed():
+	$"../click_sound".play()
 	# Play the Selected Map
 	match map:
 		0:
@@ -90,7 +94,8 @@ func _on_start_game_pressed():
 		Global.Player2_name = "player2"
 
 
-func _on_level_selection_item_selected(index):
+func _on_level_selection_item_selected(index) -> void:
+	$"../click_sound".play()
 	match index:
 		0:
 			map = 0
@@ -100,3 +105,8 @@ func _on_level_selection_item_selected(index):
 			map = 2
 		3:
 			map = 3
+
+
+func _on_check_box_toggled(button_pressed) -> void:
+	$"../click_sound".play()
+	Global.GenrateFood = button_pressed

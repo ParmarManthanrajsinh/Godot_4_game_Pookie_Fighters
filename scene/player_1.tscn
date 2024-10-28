@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://djssm768ywia6"]
+[gd_scene load_steps=16 format=3 uid="uid://djssm768ywia6"]
 
 [ext_resource type="Script" path="res://Script/player_1.gd" id="1_8mbep"]
 [ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_ed0fd"]
+[ext_resource type="PackedScene" uid="uid://o005fm03kws2" path="res://scene/healup_partical.tscn" id="2_vquvk"]
 [ext_resource type="PackedScene" uid="uid://gaw22fq8r0e4" path="res://scene/blood_partical.tscn" id="3_j38f4"]
 [ext_resource type="AudioStream" uid="uid://cikoxk0v5c8g4" path="res://Asset/SFX/hit.wav" id="4_gncgx"]
 [ext_resource type="AudioStream" uid="uid://dog8u628r2w2d" path="res://Asset/SFX/Hurt.wav" id="5_qg4f8"]
+[ext_resource type="AudioStream" uid="uid://cqyn5ilybkjoi" path="res://Asset/SFX/healup.wav" id="6_ihquj"]
 [ext_resource type="AudioStream" uid="uid://bfqmun46ynl8w" path="res://Asset/SFX/jump.wav" id="6_n8yxg"]
 [ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="7_2q1ae"]
 
@@ -59,6 +61,10 @@ height = 64.0
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_8mbep")
 
+[node name="healup_partical" parent="." instance=ExtResource("2_vquvk")]
+z_index = 1
+position = Vector2(64, 112)
+
 [node name="Blood_partical" parent="." instance=ExtResource("3_j38f4")]
 z_index = 1
 position = Vector2(64, 112)
@@ -67,7 +73,6 @@ position = Vector2(64, 112)
 position = Vector2(64, 152)
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-light_mask = 3
 position = Vector2(64, 112)
 shape = SubResource("CapsuleShape2D_p20tx")
 
@@ -108,10 +113,14 @@ stream = ExtResource("4_gncgx")
 [node name="hurt_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qg4f8")
 
+[node name="healup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ihquj")
+
 [node name="jump_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n8yxg")
 
 [node name="background_music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("7_2q1ae")
 volume_db = -14.0
 autoplay = true

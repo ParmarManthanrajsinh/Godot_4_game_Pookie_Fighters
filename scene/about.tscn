@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr4lrad5afv6"]
+[gd_scene load_steps=11 format=3 uid="uid://dr4lrad5afv6"]
 
 [ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_ii2xh"]
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="2_qvofw"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="7_fccby"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="8_qk7fb"]
 [ext_resource type="Script" path="res://Script/Back.gd" id="9_cxu84"]
+[ext_resource type="AudioStream" uid="uid://ddghtajwx7ybk" path="res://Asset/SFX/click.wav" id="10_7adc6"]
 
 [node name="About" type="Control"]
 layout_mode = 3
@@ -131,5 +132,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "https://github.com/ParmarManthanrajsinh"
 uri = "https://github.com/ParmarManthanrajsinh"
+
+[node name="click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7adc6")
+volume_db = -14.0
+autoplay = true
 
 [connection signal="pressed" from="Panel/Back" to="Panel/Back" method="_on_pressed"]

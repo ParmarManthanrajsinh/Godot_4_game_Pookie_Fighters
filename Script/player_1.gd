@@ -5,6 +5,7 @@ var SPEED = 300.0
 var ACCELERATION = 250.0
 const JUMP_VELOCITY = -500.0
 var health: int = 10
+var maxhealth: int = 10
 
 var attack: int = 3
 var IsAttacking: bool = false
@@ -49,6 +50,7 @@ func _ready() -> void:
 			attack = 2
 			SPEED = 280
 	Global.Player1_health = health
+	maxhealth = health
 	type.animation_finished.connect(_on_animation_finished)
 	$AttackBox/CollisionShape.disabled = true
 	$CenterContainer/playername.text = Global.Player1_name
@@ -160,6 +162,14 @@ func takedamage(damage:int, d:int) -> void:
 	TakenDamage = true
 	print(health)
 	velocity.x = d*2000*damage
+	Global.Player1_health = health
+
+func healup(amount:int) -> void:
+	health += amount
+	if health > maxhealth: # check after healing player health should not go above maxhealth 
+		health = maxhealth
+	$healup_partical.emitting = true
+	$healup_sound.play()
 	Global.Player1_health = health
 
 func _on_head_body_entered(body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dylcum61jhr07"]
+[gd_scene load_steps=22 format=3 uid="uid://dylcum61jhr07"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_n74lg"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_wjl01"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Script/KillZArea.gd" id="11_4irf3"]
 [ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="11_48m41"]
 [ext_resource type="PackedScene" uid="uid://b1lypvorpy47c" path="res://scene/Win_scene.tscn" id="12_ldm7d"]
+[ext_resource type="PackedScene" uid="uid://bomgys4hmiy8h" path="res://scene/foodgenrater.tscn" id="14_gxerq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("6_56t61")
@@ -1160,7 +1161,8 @@ texture = ExtResource("6_56t61")
 38:20/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_pm4w1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/2 = SubResource("TileSetAtlasSource_d7xaw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4aud"]
@@ -1263,6 +1265,8 @@ size_flags_vertical = 4
 [node name="Platform" type="AnimatableBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(816, 553.5)
 shape = SubResource("RectangleShape2D_w4aud")
 
@@ -1299,5 +1303,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 metadata/_edit_group_ = true
+
+[node name="Foodgenrater" parent="." instance=ExtResource("14_gxerq")]
 
 [connection signal="body_entered" from="KillZArea" to="KillZArea" method="_on_body_entered"]

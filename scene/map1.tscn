@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x4b6d3bcsv7y"]
+[gd_scene load_steps=17 format=3 uid="uid://x4b6d3bcsv7y"]
 
 [ext_resource type="Texture2D" uid="uid://b1hkbto5vy0gu" path="res://Asset/jungle tileset/jungle tileset.png" id="1_uoshb"]
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="3_hqsn2"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://uh8eyfswa2wk" path="res://scene/player_properties.tscn" id="9_5kv38"]
 [ext_resource type="PackedScene" uid="uid://drshl70h7blml" path="res://scene/pause_menu.tscn" id="10_awdar"]
 [ext_resource type="PackedScene" uid="uid://b1lypvorpy47c" path="res://scene/Win_scene.tscn" id="11_x3bq2"]
+[ext_resource type="PackedScene" uid="uid://bomgys4hmiy8h" path="res://scene/foodgenrater.tscn" id="12_hix24"]
+[ext_resource type="PackedScene" uid="uid://o005fm03kws2" path="res://scene/healup_partical.tscn" id="13_oefbd"]
+[ext_resource type="AudioStream" uid="uid://ddghtajwx7ybk" path="res://Asset/SFX/click.wav" id="14_quwen"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7xaw"]
 texture = ExtResource("1_uoshb")
@@ -1097,7 +1100,8 @@ texture = ExtResource("1_uoshb")
 38:20/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_pm4w1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/2 = SubResource("TileSetAtlasSource_d7xaw")
 
 [node name="map1" type="Node2D"]
@@ -1164,3 +1168,12 @@ anchor_bottom = 0.5
 metadata/_edit_group_ = true
 
 [node name="Win_scene" parent="CanvasLayer" instance=ExtResource("11_x3bq2")]
+
+[node name="Foodgenrater" parent="." instance=ExtResource("12_hix24")]
+
+[node name="healup_partical" parent="." instance=ExtResource("13_oefbd")]
+position = Vector2(192, 416)
+
+[node name="click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_quwen")
+volume_db = -14.0

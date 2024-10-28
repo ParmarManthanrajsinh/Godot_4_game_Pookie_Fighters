@@ -105,26 +105,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -52.5
-offset_right = 146.0
-offset_bottom = 52.5
+offset_left = -493.0
+offset_top = -152.5
+offset_right = 493.0
+offset_bottom = 152.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 25
-text = "About This Game:
-Discover a unique experience created by
- solo developer Parmar Manthan.
-Every detail reflects a true passion for gaming. Dive in and enjoy!
+text = "Realm Rumble is a fighting game where two players can fight each other.
+ It's a simple game. The controls are easy but the battles are exciting. 
+You can choose one of several fighters. Each of which has its own special abilities. 
+Battles take place in colorful and lively arenas. Perfect for a quick competition
+ with friends to see who's the best fighter.
 
-Contact Me:
-Get in touch below! 👇
-"
+Contact me 👇"
 vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="Panel/VBoxContainer"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctc3ep724ir5f"]
+[gd_scene load_steps=12 format=3 uid="uid://ctc3ep724ir5f"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_kgjoi"]
 [ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_pousr"]
@@ -9,6 +9,18 @@
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="7_gw4ph"]
 [ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="8_ewuqk"]
 [ext_resource type="AudioStream" uid="uid://ddghtajwx7ybk" path="res://Asset/SFX/click.wav" id="9_edh0a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05ap4"]
+bg_color = Color(0.352941, 0.615686, 0.588235, 1)
+skew = Vector2(-1, 0.082)
+border_width_left = 50
+border_width_right = 50
+border_color = Color(0.505882, 0.705882, 0.686275, 1)
+border_blend = true
+shadow_size = 32
+
+[sub_resource type="Theme" id="Theme_7ik47"]
+Label/styles/normal = SubResource("StyleBoxFlat_05ap4")
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -60,6 +72,22 @@ motion_mirroring = Vector2(1280, 0)
 position = Vector2(640, 360)
 scale = Vector2(3.33333, 3.33333)
 texture = ExtResource("5_rcq4l")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.5
+offset_top = 128.0
+offset_right = 175.5
+offset_bottom = 200.0
+grow_horizontal = 2
+theme = SubResource("Theme_7ik47")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 50
+text = "Realm Rumble"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

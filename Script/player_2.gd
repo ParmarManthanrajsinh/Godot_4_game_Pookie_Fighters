@@ -150,7 +150,7 @@ func _on_animation_finished() -> void:
 	elif type.animation == "Death":
 		self.queue_free()
 
-func _on_attack_box_body_entered(body):
+func _on_attack_box_body_entered(body) -> void:
 	if IsAttacking == true and body.name == "Player1":
 		$hurt_sound.play()
 		if type.flip_h == true:

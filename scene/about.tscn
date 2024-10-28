@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr4lrad5afv6"]
+
+[ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_ii2xh"]
+[ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="2_qvofw"]
+[ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="3_c4v8g"]
+[ext_resource type="Texture2D" uid="uid://bmslvodpinybx" path="res://Asset/parallax background/plx-3.png" id="4_aaii7"]
+[ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="5_54w3w"]
+[ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="6_okfij"]
+[ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="7_fccby"]
+[ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="8_qk7fb"]
+[ext_resource type="Script" path="res://Script/Back.gd" id="9_cxu84"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_ii2xh")
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Plx-1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(640, 358)
+scale = Vector2(3.33333, 3.35185)
+texture = ExtResource("2_qvofw")
+
+[node name="Plx-2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(640, 360)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("3_c4v8g")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Plx-3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640, 361)
+scale = Vector2(3.33333, 3.32407)
+texture = ExtResource("4_aaii7")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Plx-4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(640, 360)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("5_54w3w")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(4, 4)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Plx-5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(640, 360)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("6_okfij")
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fccby")
+volume_db = -14.0
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -282.0
+offset_right = 534.0
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.5
+offset_top = -90.0
+offset_right = 84.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_qk7fb")
+text = "  Back  "
+script = ExtResource("9_cxu84")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -52.5
+offset_right = 146.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 25
+text = "About This Game:
+Discover a unique experience created by
+ solo developer Parmar Manthan.
+Every detail reflects a true passion for gaming. Dive in and enjoy!
+
+Contact Me:
+Get in touch below! 👇
+"
+vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "https://github.com/ParmarManthanrajsinh"
+uri = "https://github.com/ParmarManthanrajsinh"
+
+[connection signal="pressed" from="Panel/Back" to="Panel/Back" method="_on_pressed"]

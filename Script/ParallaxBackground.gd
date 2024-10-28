@@ -10,11 +10,11 @@ func _on_play_pressed() -> void:
 
 
 func _on_controlls_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scene/controlls.tscn")
 
 
 func _on_about_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scene/about.tscn")
 
 
 func _on_exit_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djssm768ywia6"]
+[gd_scene load_steps=15 format=3 uid="uid://djssm768ywia6"]
 
 [ext_resource type="Script" path="res://Script/player_1.gd" id="1_8mbep"]
 [ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_ed0fd"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://dog8u628r2w2d" path="res://Asset/SFX/Hurt.wav" id="5_qg4f8"]
 [ext_resource type="AudioStream" uid="uid://cqyn5ilybkjoi" path="res://Asset/SFX/healup.wav" id="6_ihquj"]
 [ext_resource type="AudioStream" uid="uid://bfqmun46ynl8w" path="res://Asset/SFX/jump.wav" id="6_n8yxg"]
-[ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="7_2q1ae"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p20tx"]
 radius = 40.0
@@ -118,12 +117,6 @@ stream = ExtResource("6_ihquj")
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n8yxg")
-
-[node name="background_music" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("7_2q1ae")
-volume_db = -14.0
-autoplay = true
 
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_entered" from="head" to="." method="_on_head_body_entered"]

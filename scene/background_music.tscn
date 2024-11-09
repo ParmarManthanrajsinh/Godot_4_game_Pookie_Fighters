@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://j5c6slrtsb0d"]
+
+[ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="1_tghih"]
+
+[node name="background_music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_tghih")
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctc3ep724ir5f"]
+[gd_scene load_steps=11 format=3 uid="uid://ctc3ep724ir5f"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_kgjoi"]
 [ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_pousr"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="4_x0ra4"]
 [ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="5_rcq4l"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="7_gw4ph"]
-[ext_resource type="AudioStream" uid="uid://ry7g1tohp8ol" path="res://Asset/SFX/on-the-road-to-the-eighties_loop1-177567.mp3" id="8_ewuqk"]
 [ext_resource type="AudioStream" uid="uid://ddghtajwx7ybk" path="res://Asset/SFX/click.wav" id="9_edh0a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05ap4"]
@@ -121,26 +120,19 @@ text = "Controlls"
 [node name="About" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("7_gw4ph")
-text = "About
-"
+text = "About"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("7_gw4ph")
-text = "Exit
-"
-
-[node name="background_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ewuqk")
-volume_db = -14.0
-autoplay = true
+text = "Exit"
 
 [node name="click_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_edh0a")
 volume_db = -14.0
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="version" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -151,7 +143,7 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "version alpha 1.0"
+text = "version alpha 1.1"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="ParallaxBackground" method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controlls" to="ParallaxBackground" method="_on_controlls_pressed"]

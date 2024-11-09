@@ -74,12 +74,12 @@ func _physics_process(delta) -> void:
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("P2_jump") and is_on_floor():
+	if Input.is_action_pressed("P2_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$Jump_partical.emitting = true
 		$jump_sound.play()
 	# Handle Attack
-	if Input.is_action_just_pressed("P2_Attack") and AttackCooldown.is_stopped() and TakenDamage == false:
+	if Input.is_action_pressed("P2_Attack") and AttackCooldown.is_stopped() and TakenDamage == false:
 		Attack()
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("P2_move_right", "P2_move_left")

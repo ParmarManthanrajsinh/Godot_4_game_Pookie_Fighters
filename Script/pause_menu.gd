@@ -14,7 +14,7 @@ func _on_resume_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	# UnPause the Game
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scene/player_selection.tscn")
 
 func _physics_process(_delta) -> void:
 	if Global.Player1_health >= 0 and Global.Player2_health >= 0:

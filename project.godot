@@ -18,13 +18,14 @@ config/icon="res://Asset/icon.png"
 [autoload]
 
 Global="*res://Script/Global.gd"
+BackgroundMusic="*res://scene/background_music.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -78,4 +79,3 @@ Exit={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
-textures/vram_compression/import_etc2_astc=true

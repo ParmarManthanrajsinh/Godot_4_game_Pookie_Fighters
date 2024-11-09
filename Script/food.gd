@@ -3,7 +3,7 @@ extends RigidBody2D
 func _ready() -> void:
 	randomize()
 	# Genrate random sprite for food
-	$Sprite2D.frame = randi_range(0,64)
+	$Sprite2D.frame = randi_range(10,64)
 
 func _physics_process(_delta) -> void:
 	if position.y >= 736: # delete the food if it goes out of map

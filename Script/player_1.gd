@@ -175,4 +175,3 @@ func healup(amount:int) -> void:
 func _on_head_body_entered(body):
 	if body.name == "Player2":
 		body.velocity.y = -500
-

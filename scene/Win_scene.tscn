@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1lypvorpy47c"]
 
-[ext_resource type="Script" path="res://Script/Win_scene.gd" id="1_r7r7f"]
+[ext_resource type="Script" uid="uid://cnwgqp4m88jkv" path="res://Script/Win_scene.gd" id="1_r7r7f"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="2_18fye"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6p5n"]
@@ -69,8 +69,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mo8u6"]
 _data = {
-"RESET": SubResource("Animation_qytio"),
-"fadeup": SubResource("Animation_a7gyf")
+&"RESET": SubResource("Animation_qytio"),
+&"fadeup": SubResource("Animation_a7gyf")
 }
 
 [node name="Win_scene" type="Control"]

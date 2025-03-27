@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://drshl70h7blml"]
 
-[ext_resource type="Script" path="res://Script/pause_menu.gd" id="1_dvnn1"]
+[ext_resource type="Script" uid="uid://bydkifp5wn6wh" path="res://Script/pause_menu.gd" id="1_dvnn1"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="1_ygr7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6p5n"]
@@ -70,8 +70,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mo8u6"]
 _data = {
-"RESET": SubResource("Animation_qytio"),
-"fadeup": SubResource("Animation_a7gyf")
+&"RESET": SubResource("Animation_qytio"),
+&"fadeup": SubResource("Animation_a7gyf")
 }
 
 [node name="Pause_menu" type="Control"]

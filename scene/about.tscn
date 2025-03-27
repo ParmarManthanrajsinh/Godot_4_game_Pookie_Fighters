@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dr4lrad5afv6"]
 
-[ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_ii2xh"]
+[ext_resource type="Script" uid="uid://c45hyxvh3e21i" path="res://Script/ParallaxBackground.gd" id="1_ii2xh"]
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="2_qvofw"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="3_c4v8g"]
 [ext_resource type="Texture2D" uid="uid://bmslvodpinybx" path="res://Asset/parallax background/plx-3.png" id="4_aaii7"]
 [ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="5_54w3w"]
 [ext_resource type="Texture2D" uid="uid://cugdcqkndv1" path="res://Asset/parallax background/plx-5.png" id="6_okfij"]
 [ext_resource type="Theme" uid="uid://c5mk51k51gcl3" path="res://Themes/button_theme.tres" id="8_qk7fb"]
-[ext_resource type="Script" path="res://Script/Back.gd" id="9_cxu84"]
+[ext_resource type="Script" uid="uid://fyr3uq85eqxm" path="res://Script/Back.gd" id="9_cxu84"]
 [ext_resource type="AudioStream" uid="uid://ddghtajwx7ybk" path="res://Asset/SFX/click.wav" id="10_7adc6"]
 
 [node name="About" type="Control"]

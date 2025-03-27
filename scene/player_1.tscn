@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://djssm768ywia6"]
 
-[ext_resource type="Script" path="res://Script/player_1.gd" id="1_8mbep"]
+[ext_resource type="Script" uid="uid://cfrm7de4m8tu2" path="res://Script/player_1.gd" id="1_8mbep"]
 [ext_resource type="PackedScene" uid="uid://c6fx83fng06k" path="res://scene/jump_partical.tscn" id="2_ed0fd"]
 [ext_resource type="PackedScene" uid="uid://o005fm03kws2" path="res://scene/healup_partical.tscn" id="2_vquvk"]
 [ext_resource type="PackedScene" uid="uid://gaw22fq8r0e4" path="res://scene/blood_partical.tscn" id="3_j38f4"]
@@ -49,8 +49,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mrd4d"]
 _data = {
-"Attack": SubResource("Animation_5yikm"),
-"RESET": SubResource("Animation_whi7t")
+&"Attack": SubResource("Animation_5yikm"),
+&"RESET": SubResource("Animation_whi7t")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewykn"]

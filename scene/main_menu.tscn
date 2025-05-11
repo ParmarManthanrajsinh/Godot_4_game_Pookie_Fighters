@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ctc3ep724ir5f"]
 
 [ext_resource type="Texture2D" uid="uid://k4ot52o4rq66" path="res://Asset/parallax background/plx-1.png" id="1_kgjoi"]
-[ext_resource type="Script" uid="uid://c45hyxvh3e21i" path="res://Script/ParallaxBackground.gd" id="1_pousr"]
+[ext_resource type="Script" path="res://Script/ParallaxBackground.gd" id="1_pousr"]
 [ext_resource type="Texture2D" uid="uid://c6ojdtp6sl7of" path="res://Asset/parallax background/plx-2.png" id="2_ob6ty"]
 [ext_resource type="Texture2D" uid="uid://bmslvodpinybx" path="res://Asset/parallax background/plx-3.png" id="3_klq86"]
 [ext_resource type="Texture2D" uid="uid://qq4hkvbsdeqm" path="res://Asset/parallax background/plx-4.png" id="4_x0ra4"]

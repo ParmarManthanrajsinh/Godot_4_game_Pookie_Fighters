@@ -5,3 +5,15 @@ It's a simple game. The controls are easy but the battles are exciting.
 You can choose one of several fighters. Each of which has its own special abilities. 
 Battles take place in colorful and lively arenas. Perfect for a quick competition
 with friends to see who's the best fighter.
+
+## Screenshots
+
+Here are some screenshots from the game:
+
+![Main Menu](screenshots/main_menu.png)
+![Battle Arena](screenshots/battle_arena.png)
+![Character Selection](screenshots/character_select.png)
+
+## Play the Game
+
+You can download and play Pookie Fighters on [itch.io](https://parmarmanthanrajsinh.itch.io/pookie-fighters).

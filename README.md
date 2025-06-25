@@ -10,9 +10,7 @@ with friends to see who's the best fighter.
 
 Here are some screenshots from the game:
 
-![Main Menu](screenshots/main_menu.png)
 ![Battle Arena](screenshots/battle_arena.png)
-![Character Selection](screenshots/character_select.png)
 
 ## Play the Game
 
